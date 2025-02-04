@@ -68,8 +68,6 @@ class Screenshot:
 
     os.makedirs(f'{save_dir}/{title}', exist_ok=True)
 
-    
-
     #
     print(title)
     print("スクショ中...")
@@ -134,7 +132,7 @@ class ConvertToPDF:
     # Image contains an alpha channel. Computing a separate soft mask (/SMask) image to store transparency in PDF.
     # が大量発生してしまう。
     # ただし、エラーメッセージを完全に無視することになるので、何か問題が発生した場合にそれを検知することができなくなる点には注意する
-    
+
     shutil.move(f'{save_dir}/{title}/{title}.pdf', f'{save_dir}')  # PDFファイルの移動
     print("PDF化まで完了したんだナ\n")
     
