@@ -9,7 +9,7 @@ class Coordinate:
 
   def start_tracking(self):
     self.update_coordinates()
-    # ESCキーのバインディング
+    # ESCキーのバインディングw
     self.master.bind('<Escape>', self.stop_tracking)
 
   def update_coordinates(self):

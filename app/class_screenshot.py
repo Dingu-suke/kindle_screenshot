@@ -68,6 +68,8 @@ class Screenshot:
 
     os.makedirs(f'{save_dir}/{title}', exist_ok=True)
 
+    
+
     #
     print(title)
     print("スクショ中...")
@@ -122,7 +124,7 @@ class ConvertToPDF:
     try:
       print("PDFに変換中...")
       with open(f'{save_dir}/{title}/{title}.pdf', 'wb') as f:  # PDFファイルの作成と保存
-        f.write(img2pdf.convert(png_data))
+        f.write(img2pdf.convert(png_data), dpi=324)
     finally:
       # 標準エラー出力をもとに戻す
       sys.stderr.close()
@@ -132,7 +134,7 @@ class ConvertToPDF:
     # Image contains an alpha channel. Computing a separate soft mask (/SMask) image to store transparency in PDF.
     # が大量発生してしまう。
     # ただし、エラーメッセージを完全に無視することになるので、何か問題が発生した場合にそれを検知することができなくなる点には注意する
-
+    
     shutil.move(f'{save_dir}/{title}/{title}.pdf', f'{save_dir}')  # PDFファイルの移動
     print("PDF化まで完了したんだナ\n")
     
