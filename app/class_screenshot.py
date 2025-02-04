@@ -122,7 +122,7 @@ class ConvertToPDF:
     try:
       print("PDFに変換中...")
       with open(f'{save_dir}/{title}/{title}.pdf', 'wb') as f:  # PDFファイルの作成と保存
-        f.write(img2pdf.convert(png_data))
+        f.write(img2pdf.convert(png_data), dpi=324)
     finally:
       # 標準エラー出力をもとに戻す
       sys.stderr.close()
